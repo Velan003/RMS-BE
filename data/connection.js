@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
 dotenv.config();
-const dburl = process.env.DB_URL;
+const dburl = "mongodb+srv://senthilvelan:senthil@cluster0.aks8fzv.mongodb.net/railway?retryWrites=true&w=majority";
 
 const connect = function() {
   mongoose.connect(dburl, { useNewUrlParser: true, useUnifiedTopology: true, family: 4 })

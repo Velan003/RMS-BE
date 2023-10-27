@@ -1,10 +1,14 @@
 import express, { json } from 'express';
 import cors from 'cors';
-import connection from './connection.js';
+import connection from './data/connection.js'
+//import connection from './connection.js';
 import Razorpay from 'razorpay';
 
-import a from './routesU.js';
-import b from './routesC.js';
+import a from './data/routesU.js'
+//import a from './routesU.js';
+
+//import b from './routesC.js';
+import b from './data/routesC.js'
 
 const port = process.env.PORT || 3004;
 
@@ -27,7 +31,7 @@ app.post("/custom_pay", async (req, res) => {
         console.log(Math.round(req.body.amount))
 
         const options = {
-            amount: Math.round(req.body.amount)*100, // amount in smallest currency unit
+            amount: Math.round(req.body.amount)*100, // amount in smallet currency unit
             currency: "INR",
             receipt: "receipt_order_74394",
         };
